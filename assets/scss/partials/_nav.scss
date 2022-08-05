@@ -18,6 +18,11 @@
   }
 }
 
+.nav img {
+  width: 20px;
+  height: 20px;
+}
+
 .nav--active .nav {
   visibility: visible;
   height: 100%;
@@ -47,6 +52,24 @@
       opacity: 1;
       transition: all 500ms ease;
     }
+  }
+}
+
+.socials {
+  margin-top: 20px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  grid-gap: 10px;
+
+  @media screen and (min-width: $medium) {
+    width: auto;
+  }
+
+  @media screen and (max-width: $medium - 1) {
+    transform: translateY(-25px);
+    opacity: 0;
   }
 }
 

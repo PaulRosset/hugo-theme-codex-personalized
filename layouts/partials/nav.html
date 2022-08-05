@@ -1,11 +1,17 @@
 <nav class="nav" id="navigation">
   <ul class="nav__list">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
+    {{ $currentPage := . }}    
+    {{ range .Site.Menus.main.ByWeight }}
       <li>
-        <a {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }} class="active"
+        <a {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) (and (not $currentPage.Section) (eq .Identifier "home")) }} class="active"
         {{end}} href="{{ .URL }}">{{ .Name }}</a>
       </li>
     {{ end }}
+  </ul>
+  <ul class="socials">
+    <li><a href="https://github.com/PaulRosset" target="_blank"><img src="/github.png" alt="github_logo"/></a></li>
+    <li><a href="https://www.linkedin.com/in/paul-rosset-ab9891a8/" target="_blank"><img src="/linkedin.png" alt="linkedin_logo"/></a></li>
+    <li><a href="https://twitter.com/RossetPaul" target="_blank"><img src="/twitter.png" alt="twitter_logo"/></a></li>
+    <li><a href="https://medium.com/@RossetPaul" target="_blank"><img src="/medium.png" alt="medium_logo"/></a></li>
   </ul>
 </nav>

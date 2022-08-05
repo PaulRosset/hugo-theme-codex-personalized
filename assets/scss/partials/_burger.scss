@@ -7,6 +7,7 @@
   width: 100%;
   background: $white;
   z-index: 2;
+  justify-content: space-between;
 
   @media screen and (min-width: $medium) {
     display: none;
@@ -52,4 +53,19 @@
 
 .nav--active .burger__meat--3 {
   transform: rotate(-45deg);
+}
+
+.burger__socials {
+  display: flex;
+  list-style: none;
+  align-self: baseline;
+}
+
+.burger__socials li {
+  margin-left: 8px;
+}
+
+.burger__socials img {
+  width: 20px;
+  height: 20px;
 }

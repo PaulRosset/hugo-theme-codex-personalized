@@ -6,6 +6,8 @@
     
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}    
 
+{{ $currentPage := . }} 
+
 <div class="post-list__container">
   <ul class="post-list">
     {{ range .Pages }}
@@ -21,7 +23,16 @@
     </li>
     {{ end }}
   </ul>
-  {{ partial "browse-by-tag.html" .}}
+  <!-- {{ printf "%#v" .Section }} -->
+  {{ if (eq .Section "projects")}}
+    <hr class="divider"/>
+    <a href="https://github.com/PaulRosset" target="_blank">
+      <p class="more__projects">
+        More projects can be found on   
+        <img alt="github logo" src="/github.png"/>
+      </p>
+    </a>
+    {{end}}
 </div>
 
 {{ end }}

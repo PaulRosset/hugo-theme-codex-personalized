@@ -50,8 +50,27 @@
   }
 }
 
-/* page overrides */
-.post-list__container {
-  display: flex;
-  justify-content: space-between;
+.divider {
+  background-color: #dcdcd9;
+  width: 50%;
+  border: none;
+  height: 2px;
 }
+
+.more__projects {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+  }
+
+}
+
+// /* page overrides */
+// .post-list__container {
+//   display: flex;
+//   justify-content: space-between;
+// }
