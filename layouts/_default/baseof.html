@@ -41,9 +41,15 @@
   {{ block "links" . }} {{ end }}
   {{ partial "seo-schema.html" .}}
 
-  {{- if not .Site.IsServer -}}
-      {{ template "_internal/google_analytics_async.html" . }}
-  {{- end -}}
+      <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXTKBY54H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2RXTKBY54H');
+    </script>
 </head>
 
 <body>
